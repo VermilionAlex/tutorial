@@ -1,0 +1,35 @@
+body{
+    background: black;
+    color: white;
+
+}
+
+h1{
+    font-family: 'Georgia';
+    font-size: 30px;
+}
+li{
+    font-family: 'Helvetica';
+    font-size: 20px;
+
+}
+
+
+.spotlight{
+    padding: 10px;
+    border-width: 3px;
+    max-width: 300px;
+    text-align: center;
+    border-style: dotted;
+    border-color: yellow;
+}
+/*
+.artist{
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+}
+
+ */
+
