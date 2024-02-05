@@ -1,0 +1,94 @@
+body{
+    background: lightgray;
+}
+nav{
+    justify-content: space-between;
+}
+.navBar{
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    justify-content: space-between;
+    background: lavender;
+
+}
+
+.navBar a:hover{
+    /*
+    Reused my code from csc 271
+     */
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+
+    padding: 4px;
+    color: darkblue;
+    background: linear-gradient(90deg, hsla(56, 83%, 59%, 1) 0%, hsla(307, 100%, 66%, 1) 100%);
+    text-shadow: 1px 1px  #ffe311;
+
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 6px 6px #131212;
+    transition: all 1s ease;
+}
+
+
+a{
+    padding: 8px;
+}
+
+
+
+#Title{
+    font-size: 40px;
+    font-family: "Times New Roman",Tahoma;
+
+    color: darkblue;
+    text-align: center;
+
+}
+
+h2{
+
+    font-size: 20px;
+      font-family: 'Playfair Display', serif;
+    color: darkblue;
+}
+
+img{
+ float: left;
+    margin: 10px;
+}
+
+.Top{
+    top: 0;
+    padding: 10px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+
+
+}
+
+#logo{
+    float: none;
+
+    justify-content: center;
+    margin-top: 10px;
+}
+
+p{
+    font-size: 15px;
+    font-family: 'Yatra One', cursive , Tahoma;
+    color: darkred;
+}
+@media only screen and (max-width: 600px) {
+    .header a{
+        float:none;
+        display: block;
+        text-align: left;
+    }
+    .main-content{
+        width: 100%;
+        font-size: 22px;
+    }
+}
