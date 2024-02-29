@@ -1,4 +1,79 @@
 
+//we use jQuery to change the background color and font size of our h2 tags
+function changeTags() {
+    $('h2').css('background', 'linear-gradient(to right, pink, lightblue)');
+    $('h2').css('font-size', '30px');
+
+}
+changeTags();
+
+//we use jQuery to add a date to our concert page
+function addDate(){
+
+    //grabs the upcoming id and adds a date to the list of upcoming concerts
+    var $element = $('#upcoming');
+    var textADD = 'To be Announced!';
+    if($element.length >0){
+        var $first = $element.find('li').first();
+
+        //if the first.length is greater than 0, it will append the date to the list
+        if($first.length > 0){
+            $first.append(textADD);
+        }
+        //else it will append the date to the list
+        else{
+            $('<li>').append(textADD).appendTo($element);
+        }
+    }
+
+}
+addDate();
+
+
+//we use jQuery to show and hide the upcoming events
+//declare a variable to keep track of the state of the button
+var showConcert = false;
+
+//grabs the button and the upcomingEvents id, event listener to show and hide the upcoming events
+$('#show-event').on('click', function() {
+    //grabs the button and the upcomingEvents id
+    var $button = $(this);
+    var $element = $('#upcomingEvents');
+
+    //if the showConcert is false, when the button is clicked it will show the upcoming events, else it will show the upcoming events
+    if (showConcert === false){
+        $element.css('display', 'block');
+        $button.text('Hide Events');
+
+        //Give source for the image and gives statement for the upcoming events
+        $element.html('<p>This is a teaser for their upcoming show</p>' +
+            '<p>Image by QuinceCreative source from <a href="https://pixabay.com/illustrations/coming-soon-coming-soon-banner-3605857/">Pixabay</a></p>');
+
+
+        //appends the image to the upcoming events
+        $('<img>').attr({
+            'src': './images/coming-3605857_640.jpg',
+            'alt': 'QuinceCreative image'
+            //add in an animation to fade in the image
+        }).appendTo($element).hide().fadeIn('slow');
+        showConcert = true;
+
+        //else it will hide the upcoming events, assign the button to show upcoming events, and hide the image
+    } else {
+        $element.hide();
+        $button.text('Show Upcoming Events');
+        $element.empty();
+        showConcert = false;
+    }
+});
+
+//add an animation for nav bar, call back function, we hide the nav bar, fade in the nav bar, slide up the nav bar, and fade in the nav bar
+$('nav').hide().fadeIn(1000, function() {
+
+    $(this).slideUp(1000).fadeIn(1000);
+});
+//Old function changed
+/*
 //function to highlight our heading tag
 function changeTags() {
 
@@ -14,8 +89,10 @@ function changeTags() {
 }
 
 changeTags();
+*/
 
 
+/*
 //function to add dates to our concert page
 function addDate(){
 
@@ -47,8 +124,12 @@ function addDate(){
 
 }
 addDate();
+*/
 
 
+
+//Old function for button click
+/*
 //grabs the button and sets the showConcert to false
 var button = document.getElementById('show-event');
 var showConcert = false;
@@ -87,3 +168,5 @@ function onShow(){
 
 }
 button.addEventListener('click', onShow);
+
+ */
