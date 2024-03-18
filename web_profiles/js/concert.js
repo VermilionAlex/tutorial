@@ -1,7 +1,7 @@
 
 //we use jQuery to change the background color and font size of our h2 tags
 function changeTags() {
-    $('h2').css('background', 'linear-gradient(to right, pink, lightblue)');
+    $('h2').css('background', 'linear-gradient(to right, black, darkred)');
     $('h2').css('font-size', '30px');
 
 }

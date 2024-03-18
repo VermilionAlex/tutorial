@@ -1,8 +1,12 @@
 body{
-    background: lightgray;
+    background: black;
+    text-align: left;
 }
 nav{
     justify-content: space-between;
+    /*small space between text*/
+    padding: 5px;
+    margin: auto;
 }
 .navBar{
     text-align: center;
@@ -21,9 +25,9 @@ nav{
     font-size: 19px;
 
     padding: 4px;
-    color: darkblue;
-    background: linear-gradient(90deg, hsla(56, 83%, 59%, 1) 0%, hsla(307, 100%, 66%, 1) 100%);
-    text-shadow: 1px 1px  #ffe311;
+    color: red;
+    background: linear-gradient(90deg, darkmagenta, black);
+    text-shadow: 1px 1px  black;
 
     border-radius: 10px;
     border: 2px solid black;
@@ -34,7 +38,9 @@ nav{
 
 a{
     padding: 8px;
+    color: #639709;
 }
+
 
 
 
@@ -42,7 +48,7 @@ a{
     font-size: 40px;
     font-family: "Times New Roman",Tahoma;
 
-    color: darkblue;
+    color: darkorange;
     text-align: center;
 
 }
@@ -51,7 +57,8 @@ h2{
 
     font-size: 20px;
       font-family: 'Playfair Display', serif;
-    color: darkblue;
+    color: darkorange;
+    text-align: center;
 }
 
 img{
