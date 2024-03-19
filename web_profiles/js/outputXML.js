@@ -1,5 +1,6 @@
 
 // This function is used to get the value of a tag from an XML file
+// Use similar code from class material
 function getNodeValue(obj, tag) {
     return obj.getElementsByTagName(tag)[0].textContent;
 }

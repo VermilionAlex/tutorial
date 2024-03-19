@@ -1,5 +1,6 @@
 
 // This function makes a request to the server to get the JSON data
+// Use similar code from class material
 function makeRequest(){
 
     //create an instance of the XMLHttpRequest object

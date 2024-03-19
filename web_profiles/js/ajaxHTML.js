@@ -1,4 +1,5 @@
 //function to use ajax to load html file
+// Use similar code from class material
 function makeRequest(){
 
     //create an instance of the XMLHttpRequest object
