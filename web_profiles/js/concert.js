@@ -47,7 +47,9 @@ $('#show-event').on('click', function() {
 
         //Give source for the image and gives statement for the upcoming events
         $element.html('<p>This is a teaser for their upcoming show</p>' +
-            '<p>Image by QuinceCreative source from <a href="https://pixabay.com/illustrations/coming-soon-coming-soon-banner-3605857/">Pixabay</a></p>');
+                '<p>Image by QuinceCreative source from <a href="https://pixabay.com/illustrations/coming-soon-coming-soon-banner-3605857/">Pixabay</a></p>'
+
+        );
 
 
         //appends the image to the upcoming events
