@@ -1,5 +1,14 @@
 <?php
 //create a class for merchandise, for our client website as it is for a band
+
+//start session
+session_start();
+
+//Used code from class material
+require 'validate.php';
+
+
+
 class merch{
 
     //class members declared
@@ -53,6 +62,67 @@ $shirt = new merch('shirt', 'clothes', 20.00, 10);
 $tickets = new merch('tickets', 'general', 10.00, 100);
 $album = new merch('album', 'cd', 15.00, 20);
 
+
+/*
+ * USING CODE FROM CLASS
+ */
+//create a user array and an errors array
+$user = [
+    'name' => '',
+    'age' => '',
+    'terms' => '',
+];
+
+$errors = [
+    'name' => '',
+    'age' => '',
+    'terms' => '',
+];
+
+
+//create a message variable
+$message = '';
+
+//if the request method is post, set the user array to the post values
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $user['name'] = $_POST['name'];
+    $user['age'] = $_POST['age'];
+    $user['terms'] = (isset($_POST['terms']) and $_POST['terms'] == 'true') ? true : false;
+
+    //check if the user input is valid
+    $errors['name'] = is_text($user['name'],2,20) ? '' : 'Name must be between 2 and 20 characters';
+    $errors['age'] = is_number($user['age'], 16,65) ? '' : 'Age must be between 16 and 65';
+    $errors['terms'] = $user['terms'] ? '' : 'You must agree to the terms and conditions';
+
+
+    //use implode method
+    $invalid = implode($errors);
+    if($invalid){
+        $message = 'Please correct the following errors';
+    } else {
+        $message = 'Thank you for submitting the form';
+
+        // Set cookies
+        setcookie('user_name', $user['name'], 0, '/');
+        setcookie('user_age', $user['age'], 0, '/');
+        setcookie('user_terms', $user['terms'], 0, '/');
+
+    }
+
+}
+// Display message
+$userName = isset($_COOKIE['user_name']) ? htmlspecialchars($_COOKIE['user_name']) : '';
+$userAge = isset($_COOKIE['user_age']) ? htmlspecialchars($_COOKIE['user_age']) : '';
+$userTerms = isset($_COOKIE['user_terms']) ? htmlspecialchars($_COOKIE['user_terms']) : '';
+
+// Display cookie data
+
+$_SESSION['user_name'] = $userName;
+$_SESSION['user_age'] = $userAge;
+$_SESSION['user_terms'] = $userTerms;
+echo '<p>Welcome back, ' . $userName . '!</p>';
+
 ?>
 
 <?php include 'includes/merch.php'; ?>
@@ -105,9 +175,37 @@ $album = new merch('album', 'cd', 15.00, 20);
 <p> The shirts in stock are: <?= $shirt -> getStock() ?></p>
 
 
+<form action="phpclient.php" method="POST">
+    <div class="formText"> Name:</div> <input type="text" name="name" value="<?= htmlspecialchars($user['name']) ?>">
+    <span class="error"><?= $errors['name'] ?></span><br>
+
+    <div class="formText">Age: </div>
+    <input type="text" name="age" value="<?= htmlspecialchars($user['age']) ?>">
+
+    <span class="error"><?= $errors['age'] ?></span><br>
+    <input type="checkbox" name="terms" value="true" <?= $user['terms'] ? 'checked' : '' ?>>
+
+    <div class="formText"> I agree to the terms and conditions </div>
+    <span class="error"><?= $errors['terms'] ?></span><br>
+    <input type="submit" value="Save">
+</form>
 
 
 
 </body>
 
 
+
+<?php
+
+//destroy session and cookies, use code from class
+$_SESSION = [ ];
+
+
+$params = session_get_cookie_params();
+
+
+
+setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+session_destroy();
+?>
