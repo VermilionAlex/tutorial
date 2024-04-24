@@ -1,9 +1,21 @@
+<?php
+//reusing code
+
+//start session
+session_start();
+
+//Used code from class material
+require 'includes/database-connection.php';
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About</title>
-
+    <title>Merchandise</title>
     <link href = "./css/Client.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +26,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -34,57 +47,46 @@
         <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Main page </a>
         <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concert and Shows</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/music.html">Music</a>
-        <a href ="https://alexchow.rhody.dev/web_profiles/phpclient.php">Merch</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/signup.php">Sign Up</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/login.php">Log In</a>
     </nav>
 </div>
 
 <div class="background-img">
-<div class = "wrap-concert">
-<h2> Upcoming Concerts!</h2>
-
-<p>Next 2 shows coming up are the URI coffeehouse on March 21st and AS220 Blackbox on March 29th  </p>
-
-<p>There are possible upcoming events soon. The dates can change momentarily and as there is a lot to set up, we will add our social media in the future</p>
-
-<ol id = "upcoming"></ol>
-
-<h2>Events</h2>
-<p> Ticket Prices: </p>
-<p id = "ticket"> </p>
+    <div class = "wrap">
+        <h1>Sign up page</h1>
 
 
-<br>
 
-<div id="calender">
-    <h2>Calender</h2>
-    <div id="content">
+        <form action="signup-process.php" method="POST">
+            <div class="fields">
+                <div class="field quarter">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="field quarter">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="field quarter">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" name="firstname" id="firstname" required>
+                </div>
+                <div class="field quarter">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" name="lastname" id="lastname" required>
+                </div>
 
+
+            </div>
+            <ul class="actions">
+                <li><input type="submit" value="Sign Up" ></li>
+            </ul>
+        </form>
     </div>
-
-
-
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src = "./js/calender.js"> </script>
-    <br>
-<br>
-<p id="upcomingEvents">
-
-</p>
-<button id="show-event">Show upcoming events</button>
-
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script> window.jQuery || document.write('<script src = "js/jquery-3.7.1.js"> <\/script>')
-</script>
-
-<script src = "./js/concert.js"> </script>
-<script src = "./js/outputXML.js"></script>
-
-</div>
 </div>
 
 </body>
-</html>
+
+
+

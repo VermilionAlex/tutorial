@@ -162,6 +162,8 @@ echo '<p>Welcome back, ' . $userName . '!</p>';
         <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Main page </a>
         <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concert and Shows</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/music.html">Music</a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/signup.php">Sign Up</a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/login.php">Log In</a>
     </nav>
 </div>
 
@@ -191,7 +193,31 @@ echo '<p>Welcome back, ' . $userName . '!</p>';
     <span class="error"><?= $errors['terms'] ?></span><br>
     <input type="submit" value="Save">
 </form>
+        <form action="signup-process-warden.php" method="POST">
+            <div class="fields">
+                <div class="field quarter">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="field quarter">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="field quarter">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" name="firstname" id="firstname" required>
+                </div>
+                <div class="field quarter">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" name="lastname" id="lastname" required>
+                </div>
 
+
+            </div>
+            <ul class="actions">
+                <li><input type="submit" value="Sign Up" ></li>
+            </ul>
+        </form>
     </div>
 </div>
 

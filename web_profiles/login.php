@@ -1,9 +1,59 @@
+<?php
+
+/*
+ * Using code from horoscope key
+ */
+//start session
+session_start();
+// Include the session script
+
+require 'includes/database-connection.php';
+require 'includes/session.php';
+
+// If already logged in
+if ($logged_in) {
+    // Redirect to profile page
+    header('Location: profile.php');
+
+    // Stop further code running
+    exit;
+}
+
+
+// Check if the form was submitted.
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the username the user sent
+    $email = $_POST['email'];
+
+    // Get the password the user sent
+    $password = $_POST['password'];
+
+
+    // Call your authenticate function in the 'session.php' file to authenticate the user based on the provided username and password.
+    $user = authenticate($pdo, $email, $password);
+
+    // If username and password is valid (i.e., user data returned)
+    if ($user) {
+        // Call the login function in the 'session.php' file to update session data
+        login($email);
+
+        // Redirect to profile page
+        header('Location: profile.php');
+
+        // Stop further code running
+        exit;
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About</title>
-
+    <title>Merchandise</title>
     <link href = "./css/Client.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +64,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -34,57 +85,28 @@
         <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Main page </a>
         <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concert and Shows</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/music.html">Music</a>
-        <a href ="https://alexchow.rhody.dev/web_profiles/phpclient.php">Merch</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/signup.php">Sign Up</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/login.php">Log In</a>
     </nav>
 </div>
 
 <div class="background-img">
-<div class = "wrap-concert">
-<h2> Upcoming Concerts!</h2>
+    <div class = "wrap">
+        <h1>Login </h1>
 
-<p>Next 2 shows coming up are the URI coffeehouse on March 21st and AS220 Blackbox on March 29th  </p>
+        <form method="POST" action="login.php">
+            Email: <input type="email" name="email"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" value="Log In">
+        </form>
 
-<p>There are possible upcoming events soon. The dates can change momentarily and as there is a lot to set up, we will add our social media in the future</p>
-
-<ol id = "upcoming"></ol>
-
-<h2>Events</h2>
-<p> Ticket Prices: </p>
-<p id = "ticket"> </p>
-
-
-<br>
-
-<div id="calender">
-    <h2>Calender</h2>
-    <div id="content">
-
-    </div>
 
 
 
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src = "./js/calender.js"> </script>
-    <br>
-<br>
-<p id="upcomingEvents">
-
-</p>
-<button id="show-event">Show upcoming events</button>
-
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script> window.jQuery || document.write('<script src = "js/jquery-3.7.1.js"> <\/script>')
-</script>
-
-<script src = "./js/concert.js"> </script>
-<script src = "./js/outputXML.js"></script>
-
-</div>
+    </div>
 </div>
 
 </body>
-</html>
+
+
+
