@@ -165,6 +165,8 @@ echo '<p>Welcome back, ' . $userName . '!</p>';
     </nav>
 </div>
 
+<div class="background-img">
+    <div class = "wrap">
 <h1> Merchandise available:</h1>
 
 <h2> <?= $shirt -> getItem() ?></h2>
@@ -190,7 +192,8 @@ echo '<p>Welcome back, ' . $userName . '!</p>';
     <input type="submit" value="Save">
 </form>
 
-
+    </div>
+</div>
 
 </body>
 
