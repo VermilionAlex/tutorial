@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     //we get the next user id number to choose from, should be the highest number + 1
-    $user_id = $pdo->query("SELECT MAX(user_id) + 1 AS next_id FROM users")->fetch()['next_id'];
+    $user_id = $pdo->query("SELECT MAX(user_id) + 1 AS next_id FROM user")->fetch()['next_id'];
 
     // Insert the new user into table
     try {
         $pdo->beginTransaction();
 
         //We insert data into the user table
-        $stmt = $pdo->prepare("INSERT INTO user (user_id,  fname, lname, email, pass) VALUES (?, ? , ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO user (user_id,  fname, lname, email, password) VALUES (?, ? , ?, ?, ?)");
         $stmt->execute([$user_id, $firstname, $lastname,  $email,  $password]);
 
         $pdo->commit();
