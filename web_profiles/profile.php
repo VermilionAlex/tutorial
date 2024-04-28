@@ -3,7 +3,7 @@
 
 // Include the session script
 require 'includes/session.php';
-require 'includes/database-connection.php';
+
 
 
 // Redirect user if not logged in

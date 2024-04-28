@@ -7,7 +7,7 @@
 session_start();
 // Include the session script
 
-require 'includes/database-connection.php';
+
 require 'includes/session.php';
 
 // If already logged in
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Merchandise</title>
+    <title>Log In</title>
     <link href = "./css/Client.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <div class="Top">
-    <h1 id="Title"> Concerts</h1>
+    <h1 id="Title"> Log in Page</h1>
 
     <img id="logo" src="./images/concept_logo.png" alt="logo">
 </div>

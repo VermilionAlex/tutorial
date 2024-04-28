@@ -15,7 +15,7 @@ require 'includes/database-connection.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Merchandise</title>
+    <title>SignUp</title>
     <link href = "./css/Client.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@ require 'includes/database-connection.php';
 <body>
 
 <div class="Top">
-    <h1 id="Title"> Concerts</h1>
+    <h1 id="Title"> Sign Up Page</h1>
 
     <img id="logo" src="./images/concept_logo.png" alt="logo">
 </div>
