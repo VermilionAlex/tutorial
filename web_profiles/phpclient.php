@@ -98,7 +98,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     //use implode method
     $invalid = implode($errors);
-    if($invalid){
+    if($invalid || $errors['name'] || $errors['age'] || $errors['terms']){
         $message = 'Please correct the following errors';
     } else {
         $message = 'Thank you for submitting the form';
@@ -121,11 +121,11 @@ $userTerms = isset($_COOKIE['user_terms']) ? htmlspecialchars($_COOKIE['user_ter
 $_SESSION['user_name'] = $userName;
 $_SESSION['user_age'] = $userAge;
 $_SESSION['user_terms'] = $userTerms;
-echo '<p>Welcome back, ' . $userName . '!</p>';
+
 
 ?>
 
-<?php include 'includes/merch.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +147,7 @@ echo '<p>Welcome back, ' . $userName . '!</p>';
 <body>
 
 <div class="Top">
-    <h1 id="Title"> Concerts</h1>
+    <h1 id="Title"> Merch</h1>
 
     <img id="logo" src="./images/concept_logo.png" alt="logo">
 </div>
@@ -192,9 +192,16 @@ echo '<p>Welcome back, ' . $userName . '!</p>';
     <div class="formText"> I agree to the terms and conditions </div>
     <span class="error"><?= $errors['terms'] ?></span><br>
     <input type="submit" value="Save">
+</form>
 
+        <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && is_numeric($userAge)): ?>
+            <p>Welcome back, <?= htmlspecialchars($userName) ?>, you are <?= htmlspecialchars($userAge) ?> !</p>
+        <?php endif; ?>
     </div>
 </div>
+
+
+
 
 </body>
 

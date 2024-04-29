@@ -12,6 +12,8 @@ function is_number($number, $min =0, $max = 1000){
 
     //check for password
     function is_password($password): bool{
+
+    //check if password is at least 8 characters long and contains at least one uppercase letter, one lowercase letter, and one number
         if(mb_strlen($password) >= 8
             and preg_match('/[A-Z]/', $password)
             and preg_match('/[a-z]/', $password)

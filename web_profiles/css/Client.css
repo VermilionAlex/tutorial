@@ -49,8 +49,10 @@ a{
     font-size: 40px;
     font-family: "Times New Roman",Tahoma;
 
-    color: darkorange;
+    color: red;
     text-align: center;
+    text-shadow: floralwhite 1px 1px 1px;
+    margin: 20px;
 
 }
 
@@ -149,7 +151,22 @@ video{
 
 
 }
+#accord div{
 
+    border-radius: 5px;
+    background: transparent;
+    backdrop-filter: contrast(0.5);
+
+}
+
+#accord h2{
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    color: darkorange;
+    text-align: center;
+    background: black;
+
+}
 @media only screen and (max-width: 600px) {
     .header a{
         float:none;

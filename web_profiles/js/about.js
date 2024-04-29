@@ -14,7 +14,7 @@ alert_user();
 //member of the band
 // object literal notation
 var member = {
-    name: 'Placeholder',
+    name: 'Owen',
     instrument: 'guitar'
 
 };

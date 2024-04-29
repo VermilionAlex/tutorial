@@ -1,9 +1,9 @@
 <?php
 
-
+//we link the database connection
 require 'includes/database-connection.php';
 
-
+//if the request method is post
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve data from form
     $firstname = htmlspecialchars($_POST['firstname']);
@@ -26,13 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $pdo->beginTransaction();
 
-        //We insert data into the user table
+        //We insert data into the user table, preparing the statement, and then executing it
         $stmt = $pdo->prepare("INSERT INTO user (user_id,  fname, lname, email, password) VALUES (?, ? , ?, ?, ?)");
         $stmt->execute([$user_id, $firstname, $lastname,  $email,  $password]);
 
         $pdo->commit();
+
         // Successful login
         $redirectUrl = 'login.php';
+
+        //We need to show the user if the sign up was successful or not, store the message in a variable
         $message = "Signup successful. Redirecting to update page...";
     } catch (PDOException $e) {
         $pdo->rollBack();

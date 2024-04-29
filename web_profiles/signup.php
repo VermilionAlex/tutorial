@@ -42,11 +42,11 @@ require 'includes/database-connection.php';
 
 <div class="navBar">
     <nav>
-        <a href ="https://alexchow.rhody.dev/web_profiles/about.html">About page </a>
-
-        <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Main page </a>
-        <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concert and Shows</a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/about.html">About </a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Home </a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concerts</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/music.html">Music</a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/phpclient.php">Merch</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/signup.php">Sign Up</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/login.php">Log In</a>
     </nav>
