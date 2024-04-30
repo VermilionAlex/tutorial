@@ -157,11 +157,11 @@ $_SESSION['user_terms'] = $userTerms;
 
 <div class="navBar">
     <nav>
-        <a href ="https://alexchow.rhody.dev/web_profiles/about.html">About page </a>
-
-        <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Main page </a>
-        <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concert and Shows</a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/about.html">About </a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/index.html">Home </a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/concerts.html">Concerts</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/music.html">Music</a>
+        <a href ="https://alexchow.rhody.dev/web_profiles/phpclient.php">Merch</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/signup.php">Sign Up</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/login.php">Log In</a>
     </nav>
@@ -202,7 +202,12 @@ $_SESSION['user_terms'] = $userTerms;
 
 
 
+<footer>
+    <p> &copy; 2024 EXILE</p>
 
+    <a href="https://www.freepik.com/author/dgim-studio"> Background Image by dgim-studio</a>
+    <a href="https://www.freepik.com/free-vector/grunge-seamless-pattern-with-skulls_8083820.htm#query=metal%20music&position=0&from_view=keyword&track=ais&uuid=c54f4d4f-3c7e-4a50-90ef-b53e8972a1ae"> Image link on Freepik</a>
+</footer>
 </body>
 
 
