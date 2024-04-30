@@ -26,9 +26,6 @@ $user = pdo($pdo, $sql, ['email' => $email])->fetch();
 
 
 
-
-
-
 ?>
 
 

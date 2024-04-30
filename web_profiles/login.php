@@ -43,6 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Stop further code running
         exit;
     }
+    else{
+        echo "Invalid login";
+
+    }
 }
 
 
@@ -87,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href ="https://alexchow.rhody.dev/web_profiles/phpclient.php">Merch</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/signup.php">Sign Up</a>
         <a href ="https://alexchow.rhody.dev/web_profiles/login.php">Log In</a>
+
     </nav>
 </div>
 

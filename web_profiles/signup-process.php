@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $redirectUrl = 'login.php';
 
         //We need to show the user if the sign up was successful or not, store the message in a variable
-        $message = "Signup successful. Redirecting to update page...";
+        $message = "Signup successful. Redirecting to log in page...";
     } catch (PDOException $e) {
         $pdo->rollBack();
         // Invalid credentials
